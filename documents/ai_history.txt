@@ -1,0 +1,21 @@
+Artificial Intelligence (AI) is a field of computer science focused on building systems capable of performing tasks that normally require human intelligence. These tasks include learning, reasoning, problem solving, perception, and language understanding.
+
+The concept of artificial intelligence dates back to ancient history where myths described artificial beings with intelligence. However, the modern field of AI began in the 1950s.
+
+In 1956, the Dartmouth Conference marked the official birth of AI as a research discipline. Researchers such as John McCarthy, Marvin Minsky, Allen Newell, and Herbert Simon believed that machines could be made to simulate human intelligence.
+
+Early AI systems focused on symbolic reasoning and rule-based systems. These systems attempted to encode human knowledge using logical rules.
+
+In the 1970s and 1980s, AI experienced periods known as "AI winters" where funding and interest declined due to limited progress.
+
+In the 1990s, machine learning began to replace rule-based approaches. Instead of manually programming rules, systems began learning patterns from data.
+
+In 1997, IBM's Deep Blue defeated world chess champion Garry Kasparov, marking a milestone in AI research.
+
+In the 2000s, advances in computational power and large datasets enabled the rise of deep learning. Neural networks with many layers could now process complex patterns in images, speech, and text.
+
+Today AI powers many technologies including recommendation systems, speech recognition, autonomous vehicles, and generative models such as large language models.
+
+Large language models are trained on massive amounts of text data and can generate human-like responses. They are widely used in chatbots, content generation, and knowledge assistants.
+
+AI continues to evolve rapidly, with research focusing on explainability, safety, fairness, and general intelligence.

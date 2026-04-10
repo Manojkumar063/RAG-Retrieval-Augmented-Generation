@@ -1,0 +1,375 @@
+Docker and Kubernetes Knowledge Base (RAG Dataset)
+Introduction to Containers
+
+Containers are a lightweight virtualization technology that allows applications to run in isolated environments. Unlike traditional virtual machines, containers share the host operating system kernel while maintaining separate user spaces. This design makes containers faster to start, more efficient in resource usage, and easier to deploy.
+
+Containers package an application along with all its dependencies, libraries, and configuration files into a single unit. This ensures that the application runs consistently across different environments such as development, testing, staging, and production.
+
+Containerization has become a key technology for modern cloud-native applications because it improves portability, scalability, and deployment speed.
+
+Docker
+What is Docker?
+
+Docker is an open-source containerization platform used to build, ship, and run applications inside containers. Docker simplifies application deployment by packaging applications and dependencies into standardized containers.
+
+Docker enables developers to create reproducible environments, making it easier to share applications across teams and infrastructure.
+
+Docker follows a client-server architecture:
+
+Docker Client
+Docker Daemon
+Docker Registry
+
+The Docker client communicates with the Docker daemon, which performs operations such as building images, running containers, and managing resources.
+
+Docker Images
+
+Docker images are read-only templates used to create containers. They contain:
+
+Application code
+Runtime environment
+System libraries
+Dependencies
+Configuration files
+
+Images are built using a Dockerfile, which defines the steps required to assemble the image.
+
+Example Dockerfile:
+
+FROM python:3.10
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]
+
+Docker images are stored in registries such as:
+
+Docker Hub
+Amazon Elastic Container Registry (ECR)
+Google Container Registry (GCR)
+Azure Container Registry (ACR)
+
+Docker Containers
+
+A Docker container is a running instance of a Docker image.
+
+Containers provide isolated environments for applications. Multiple containers can run on the same host without interfering with each other.
+
+Key features of containers:
+
+Isolation
+Portability
+Fast startup
+Efficient resource usage
+
+Common Docker commands:
+
+Build image
+
+docker build -t myapp .
+
+Run container
+
+docker run -p 5000:5000 myapp
+
+List running containers
+
+docker ps
+
+Stop container
+
+docker stop container_id
+Docker Architecture
+
+Docker architecture includes several components:
+
+Docker Client
+Docker Daemon
+Docker Images
+Docker Containers
+Docker Registries
+
+The Docker daemon manages images, containers, networks, and volumes.
+
+Docker Networking
+
+Docker provides networking features that allow containers to communicate with each other and with external systems.
+
+Common Docker network types:
+
+Bridge Network
+Host Network
+Overlay Network
+Macvlan Network
+
+Bridge networks are the default networks used for containers running on a single host.
+
+Overlay networks allow containers across multiple hosts to communicate in distributed environments.
+
+Docker Volumes
+
+Containers are ephemeral by default, meaning data is lost when containers are removed.
+
+Docker volumes provide persistent storage that can survive container restarts.
+
+Volumes allow data to be stored outside the container filesystem.
+
+Example:
+
+docker volume create myvolume
+docker run -v myvolume:/data myapp
+Kubernetes
+What is Kubernetes?
+
+Kubernetes is an open-source container orchestration platform designed to automate deployment, scaling, and management of containerized applications.
+
+Kubernetes was originally developed by Google and is now maintained by the Cloud Native Computing Foundation (CNCF).
+
+Kubernetes helps manage large numbers of containers running across multiple machines.
+
+Key benefits:
+
+Automated deployment
+Scaling
+Self-healing
+Load balancing
+Service discovery
+
+Kubernetes Cluster Architecture
+
+A Kubernetes cluster consists of two main components:
+
+Control Plane
+Worker Nodes
+
+The control plane manages the cluster and makes decisions about scheduling, scaling, and maintaining the desired state of applications.
+
+Worker nodes run the actual application containers.
+
+Control Plane Components
+
+The Kubernetes control plane includes several components:
+
+API Server
+Scheduler
+Controller Manager
+etcd
+
+API Server
+The API server is the central component that exposes the Kubernetes API.
+
+Scheduler
+The scheduler assigns pods to worker nodes based on available resources.
+
+Controller Manager
+The controller manager runs controllers that monitor cluster state and make adjustments.
+
+etcd
+etcd is a distributed key-value store used to store cluster configuration and state.
+
+Worker Node Components
+
+Worker nodes run the containerized applications.
+
+Main components include:
+
+Kubelet
+Container Runtime
+Kube-proxy
+
+Kubelet
+The kubelet communicates with the control plane and ensures containers are running correctly.
+
+Container Runtime
+The container runtime (Docker, containerd, CRI-O) runs containers.
+
+Kube-proxy
+Kube-proxy handles networking and load balancing between pods.
+
+Pods
+
+Pods are the smallest deployable units in Kubernetes.
+
+A pod can contain:
+
+One container
+Multiple tightly coupled containers
+
+Containers within the same pod share:
+
+Network namespace
+Storage volumes
+
+Example pod configuration:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+spec:
+  containers:
+  - name: mycontainer
+    image: nginx
+Kubernetes Deployments
+
+Deployments manage the lifecycle of applications in Kubernetes.
+
+They ensure that the desired number of pods are running.
+
+Example deployment:
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+Kubernetes Services
+
+Services provide stable networking for pods.
+
+Because pods are ephemeral and can change IP addresses, services provide a stable endpoint.
+
+Types of services:
+
+ClusterIP
+NodePort
+LoadBalancer
+ExternalName
+
+ClusterIP exposes services internally within the cluster.
+
+NodePort exposes services on a node's IP and port.
+
+LoadBalancer integrates with cloud providers to create external load balancers.
+
+Kubernetes Scaling
+
+Kubernetes supports automatic scaling using the Horizontal Pod Autoscaler (HPA).
+
+HPA scales pods based on metrics such as:
+
+CPU usage
+Memory usage
+Custom metrics
+
+Example command:
+
+kubectl autoscale deployment myapp --cpu-percent=50 --min=1 --max=10
+Kubernetes Self-Healing
+
+Kubernetes automatically detects and replaces failed containers.
+
+Self-healing features include:
+
+Restarting failed containers
+Replacing unhealthy pods
+Rescheduling pods on healthy nodes
+
+Kubernetes ConfigMaps and Secrets
+
+ConfigMaps store configuration data separately from application code.
+
+Secrets store sensitive information such as passwords, tokens, and API keys.
+
+Example ConfigMap:
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  DB_HOST: database
+Kubernetes Persistent Storage
+
+Kubernetes supports persistent storage using:
+
+Persistent Volumes (PV)
+Persistent Volume Claims (PVC)
+
+Persistent volumes allow data to survive pod restarts.
+
+Docker vs Kubernetes
+
+Docker is used for:
+
+Building containers
+Packaging applications
+Running containers locally
+
+Kubernetes is used for:
+
+Managing containers at scale
+Automating deployment
+Scaling applications
+
+Docker creates containers, while Kubernetes manages and orchestrates them.
+
+Cloud Native Applications
+
+Cloud-native applications are designed to run in distributed environments such as cloud platforms.
+
+They use:
+
+Microservices architecture
+Containers
+Service meshes
+CI/CD pipelines
+
+Docker and Kubernetes are core technologies for building cloud-native systems.
+
+CI/CD with Containers
+
+Containers integrate well with CI/CD pipelines.
+
+Typical pipeline:
+
+Code commit
+Build Docker image
+Push image to registry
+Deploy to Kubernetes cluster
+
+Tools commonly used:
+
+Jenkins
+GitHub Actions
+GitLab CI
+ArgoCD
+Tekton
+
+Monitoring and Logging
+
+Monitoring and logging are essential for containerized applications.
+
+Common tools:
+
+Prometheus – monitoring and metrics
+Grafana – visualization
+ELK Stack – logging
+Fluentd – log aggregation
+
+Security in Container Environments
+
+Security practices include:
+
+Image scanning
+Role-based access control (RBAC)
+Network policies
+Secrets management
+
+Tools:
+
+Trivy – container vulnerability scanner
+Falco – runtime security monitoring
+OPA Gatekeeper – policy enforcement

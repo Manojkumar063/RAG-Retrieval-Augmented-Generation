@@ -1,0 +1,29 @@
+Amazon DynamoDB is a fully managed NoSQL database service provided by AWS. It offers single-digit millisecond performance at any scale.
+
+DynamoDB stores data in tables. Each table has a primary key which can be a partition key alone or a combination of partition key and sort key.
+
+DynamoDB supports two read/write capacity modes: provisioned and on-demand. On-demand mode automatically scales to handle traffic.
+
+DynamoDB Streams captures item-level changes in a table and pushes them to a stream, enabling event-driven architectures.
+
+AWS Lambda is a serverless compute service that runs code in response to events without provisioning or managing servers.
+
+Lambda functions are triggered by events from services like S3, DynamoDB, API Gateway, SNS, and SQS.
+
+Lambda automatically scales by running code in parallel. You pay only for the compute time consumed.
+
+Amazon S3 (Simple Storage Service) is an object storage service offering industry-leading scalability, availability, and durability.
+
+S3 stores data as objects within buckets. Each object consists of data, a key (unique name), and metadata.
+
+S3 use cases include backup and restore, data archiving, static website hosting, and data lakes.
+
+S3 storage classes include Standard, Intelligent-Tiering, Standard-IA, One Zone-IA, Glacier, and Glacier Deep Archive.
+
+AWS IAM (Identity and Access Management) enables you to manage access to AWS services and resources securely.
+
+IAM allows you to create and manage AWS users, groups, roles, and permissions using policies.
+
+IAM policies are JSON documents that define permissions. They can be attached to users, groups, or roles.
+
+The principle of least privilege in IAM means granting only the permissions required to perform a task.

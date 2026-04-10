@@ -1,0 +1,17 @@
+Amazon S3 (Simple Storage Service) is an object storage service offering scalability, data availability, security, and performance. It stores data as objects within buckets and is commonly used for backups, static websites, and data lakes.
+
+Amazon EC2 (Elastic Compute Cloud) provides scalable virtual servers in the cloud. You can choose instance types based on CPU, memory, storage, and networking needs. EC2 supports auto-scaling and load balancing.
+
+AWS Lambda is a serverless compute service that runs code in response to events without provisioning or managing servers. It automatically scales and you pay only for the compute time consumed.
+
+Amazon RDS (Relational Database Service) makes it easy to set up, operate, and scale relational databases in the cloud. It supports MySQL, PostgreSQL, MariaDB, Oracle, and SQL Server.
+
+Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. It supports key-value and document data models.
+
+AWS IAM (Identity and Access Management) enables you to manage access to AWS services and resources securely. You can create users, groups, roles, and policies to control permissions.
+
+Amazon VPC (Virtual Private Cloud) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network you define.
+
+Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency.
+
+AWS Terraform is an infrastructure-as-code tool by HashiCorp that allows you to define and provision AWS infrastructure using declarative configuration files with .tf extension.

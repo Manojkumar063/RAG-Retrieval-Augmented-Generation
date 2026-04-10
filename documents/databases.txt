@@ -1,0 +1,17 @@
+A database is an organized collection of structured information or data typically stored electronically in a computer system.
+
+Databases are managed by database management systems (DBMS). Popular relational database systems include PostgreSQL, MySQL, and Oracle Database.
+
+Relational databases store data in tables consisting of rows and columns. Each table represents an entity and relationships can be established between tables using foreign keys.
+
+SQL (Structured Query Language) is used to query and manage relational databases.
+
+NoSQL databases were developed to handle large volumes of unstructured or semi-structured data. Examples include MongoDB, Cassandra, and Redis.
+
+MongoDB is a document-based database that stores data in flexible JSON-like documents.
+
+Vector databases are specialized databases designed to store vector embeddings used in machine learning and semantic search.
+
+Examples of vector databases include Chroma, Pinecone, Weaviate, and FAISS.
+
+Vector databases enable similarity search by comparing numerical vector representations of data.
